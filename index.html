@@ -1,0 +1,43 @@
+<!-- 
+    
+ GIT :- https://github.com/Aa-yush/Vocso_test.git
+    
+1. Create a HTML Page.
+2. Add a Button ``Add Random Color".
+3. Clicking on that should add a div of 100 x 100 px with a random color in the background and its color code ( In hexa format like #ffffff) in its text.
+4. When you click on these color boxes, it should be deleted. 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocso Assignment</title>
+</head>
+<body>
+    <h1>Javascript Test</h1>
+    <div id="mydiv" onclick="removeDiv()">
+        <p id="_hashcode"></p>
+    </div><br>
+    <button onclick="changeColor()">Add Random Color</button>
+    
+</body>
+
+<script>
+    function changeColor(){
+        var div = document.getElementById("mydiv");
+        var para = document.getElementById("_hashcode");
+        var random_color = "#"+Math.floor(Math.random()*16777215).toString(16);
+        para.innerHTML = random_color;
+        div.setAttribute("style","width:100px; height:100px; background-color:"+random_color+";");
+    }
+
+    function removeDiv(){
+        var div = document.getElementById("mydiv");
+        div.setAttribute("style","visibility:hidden");
+    }
+</script>
+</html>
